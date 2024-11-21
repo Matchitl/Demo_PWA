@@ -1,6 +1,12 @@
+//sw produccion
+var url = window.location.href
+var swLocation='Demo_PWA/sw.js';
 
 //Agregar Bloque 1
 if(navigator.serviceWorker){
+    if(url.includes('localhost')){
+        swLocation='/sw.js'
+    }
     navigator.serviceWorker.register('/sw.js');
 }
 
